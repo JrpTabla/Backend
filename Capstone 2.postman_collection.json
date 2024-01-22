@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "857ccb27-b51a-47b9-a2bb-d351f21cebca",
+		"name": "Capstone 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27194892",
+		"_collection_link": "https://restless-station-676530.postman.co/workspace/Team-Workspace~a5feb1be-34fe-484e-83c3-3038232d2b3a/collection/27194892-857ccb27-b51a-47b9-a2bb-d351f21cebca?action=share&creator=27194892&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Check Email Exist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"james@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/checkEmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"checkEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jonnabelle\",\r\n    \"lastName\": \"Clavecilla\",\r\n    \"email\": \"jonnabelle@mail.com\",\r\n    \"mobileNo\": \"09123456789\",\r\n    \"password\": \"belle123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Tabla@mail.com\",\r\n    \"password\": \"Tabla123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmQ0NTk1ZDBiZGMwOGI5NmMxMyIsImVtYWlsIjoiam9ubmFiZWxsZUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODM2OTY3NDd9.fX0zzLfTwu4Ulh814zbdDoulFkwR-2WjhXXTyRdGUKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/users/details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a Pet to User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmQ0NTk1ZDBiZGMwOGI5NmMxMyIsImVtYWlsIjoiam9ubmFiZWxsZUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODM2OTY3NDd9.fX0zzLfTwu4Ulh814zbdDoulFkwR-2WjhXXTyRdGUKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"petId\" : \"645b2c83595d0bdc08b96c1d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/users/addingPet",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"addingPet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Add a Pet (User Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmQ0NTk1ZDBiZGMwOGI5NmMxMyIsImVtYWlsIjoiam9ubmFiZWxsZUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2ODM2OTY3NDd9.fX0zzLfTwu4Ulh814zbdDoulFkwR-2WjhXXTyRdGUKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Keanu\",\r\n    \"kind\" : \"Cat\",\r\n    \"breed\" : \"Persian\",\r\n    \"sex\" : \"Male\",\r\n    \"age\" : 1,\r\n    \"hairType\" : \"White and Orange\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/pet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Pet (Admin Only)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWFmNzg1M2YzNjJiM2VkNWU3MDM3NiIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM2ODMyNTN9.lDFMF1s9CWvMlM0k3JSbNi_HN1RnNGn5_klTsCfSwfc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/pet/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pet",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Specific Pet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/pet/645af1623f4d383adc608b28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pet",
+								"645af1623f4d383adc608b28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veterinary",
+			"item": [
+				{
+					"name": "Add a Veterinary (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Doc. Carl Santos\",\r\n    \"procedure\" : \"Deworming\",\r\n    \"price\" : 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vet/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Veterinary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Available Veterinary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/Available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"Available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Veterinary Doctor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/Doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"Doctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Veterinary  Surgeon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/Surgeon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"Surgeon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Available Vaccination Procedure",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/Vaccination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"Vaccination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Available Deworming Procedure",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/Deworming",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"Deworming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Specific Veterinary Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating Vetetrinary Details (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"John\",\r\n    \"procedure\" : \"Vaccination\",\r\n    \"price\" : 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archieve Veterinary (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752/archive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752",
+								"archive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unarchive a Veterinary (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752/unarchive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752",
+								"unarchive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Veterinary as a  Doctor (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752/setDoctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752",
+								"setDoctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unset Veterinary as a  Doctor (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752/unsetDoctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752",
+								"unsetDoctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Veterinary as a  Surgeon (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752/setSurgeon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752",
+								"setSurgeon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unset Veterinary as a  Surgeon (Admin Only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIyYmJiNTk1ZDBiZGMwOGI5NmMxMSIsImVtYWlsIjoiVGFibGFAbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODM3MDMwMjR9.IjhN3R7sXpFhrMEGDtPZt0RZVAWnDr--Uii2KmtDjV4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/vet/645b579d487168205a513752/unsetSurgeon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"vet",
+								"645b579d487168205a513752",
+								"unsetSurgeon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
